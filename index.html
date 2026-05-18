@@ -497,8 +497,8 @@
           <li>The left pane shows a list of wavetables, along with an animated thumbnail of that wavetable. Click on the animation or wavetable name to see a more detailed view on the right, with a grid view of all 64 waveforms in the wavetable.</li>
           <li>The top shows a larger view of the wavetable that you can scrub through manually with the slider. You can also toggle <em>autoscan</em> to have it cycle automatically.</li>
           <li>To listen to the wavetable, toggle <em>playback</em>. The waveform is played at 44.1kHz, which for these 256-sample waveforms plays at about 172Hz, which isn't a specific note but is close to F3.</li>
-          <li>By default, we only show (and play) the actual 64 waveforms in each wavetable. The M8 applies linear interpolation between frames to stretch these wavetables across the 0-255 range. 
-          The <em>interpolate</em> checkbox applies an approximation of this interpolation to the visualization and the audio playback. Note that in this page the interpolation is only to the nearest integer index; 
+          <li>Internally, there are only 64 waveforms in each wavetable. The M8 applies linear interpolation between frames to stretch these wavetables across the 0-255 range. 
+          The <em>interpolate</em> checkbox (enabled by default)  applies an approximation of this interpolation to the visualization and the audio playback. You can turn it off to see and hear the original 64 wavetables. Note that in this app, the interpolation is only to the nearest integer index; 
           the M8 interpolation is more fine-grained. Moreover, M8's WAVSYNTH applies antialiasing on the wavetables, so they'll sound a bit nicer.</li>
           </ul>
       </p>
