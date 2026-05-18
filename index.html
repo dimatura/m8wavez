@@ -230,7 +230,7 @@
   function pretty(name) { return name.replace(/_/g, ":"); }
 
   // persistent UI state across wavetable switches
-  const uiState = { autoScan: false, interpolate: false, speedDivisor: 1 };
+  const uiState = { autoScan: false, interpolate: true, speedDivisor: 1 };
   const INTERP_FACTOR = 4;  // M8 hardware: 256 logical positions / 64 stored frames
   const SPEED_DIVISORS = [4, 2, 1];  // slider index 0..2 = slowest..fastest
 
@@ -494,12 +494,12 @@
       <h3>usage</h3>
       <p>
           <ul>
-          <li>The left pane shows a list of wavetables, along with an animated thumbnail of that wavetable. Click on the animation or name to see a more detailed view on the right, with a grid view of all 64 waveforms in the wavetable.</li>
-          <li>The top shows a larger view of the wavetable that you can scrub through manually with the slider. You can also toggle <i>autoscan</i> to have it cycle automatically.</li>
-          <li>To listen to the wavetable, toggle <i>playback</i>. The waveform is played at 44.1kHz, which for these 256-sample waveforms isn't a specific note, so it'll always be out of tune ;).</li>
+          <li>The left pane shows a list of wavetables, along with an animated thumbnail of that wavetable. Click on the animation or wavetable name to see a more detailed view on the right, with a grid view of all 64 waveforms in the wavetable.</li>
+          <li>The top shows a larger view of the wavetable that you can scrub through manually with the slider. You can also toggle <em>autoscan</em> to have it cycle automatically.</li>
+          <li>To listen to the wavetable, toggle <em>playback</em> The waveform is played at 44.1kHz, which for these 256-sample waveforms isn't a specific note, so it'll always be out of tune ;).</li>
           <li>By default, we only show (and play) the actual 64 waveforms in each wavetable. The M8 applies linear interpolation between frames to stretch these wavetables across the 0-255 range. 
-          The <i>interpolate</i> checkbox applies an approximation of this interpolation to the visualization and the audio playback. Note that in this page the interpolation is only to the nearest integer index; 
-          the M8 interpolation is more fine-grained.</li>
+          The <em>interpolate</em> checkbox applies an approximation of this interpolation to the visualization and the audio playback. Note that in this page the interpolation is only to the nearest integer index; 
+          the M8 interpolation is more fine-grained. Moreover, M8's WAVSYNTH applies antialiasing on the wavetables, so they'll sound a bit nicer.</li>
           </ul>
       </p>
       <h3>note</h3>
